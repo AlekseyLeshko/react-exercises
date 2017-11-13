@@ -1,22 +1,30 @@
 import React from 'react';
 import test from 'ava';
 import { wrapper } from 'chuhai';
-import Item from './src/item.js';
+import App from './src/app.js';
 import renderer from 'react-test-renderer';
 
 const suite = wrapper(test);
 
-suite('array concat', t => {
+suite('entity model before and after redux store', t => {
+  const expected = 'test-name';
+  let component;
+  let text;
+
   t.cycle(() => {
-    t.pass();
+    let tree = component.toJSON()
+    tree.props.onClick();
+    tree = component.toJSON();
+    
+    const obj = JSON.parse(tree.children[0]);
+
+    t.is(obj.name, expected);
   });
 
-  t.bench('use simple redux store', () => {
-    const component = renderer.create(
-      <Item/>
+  t.bench('default use without model', () => {
+    component = renderer.create(
+      <App/>
     );
-    let tree = component.toJSON()
-    tree.props.click();
   });
 });
 
