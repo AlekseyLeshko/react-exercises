@@ -1,0 +1,2 @@
+export const UPDATE_ENTITY = 'UPDATE_ENTITY';
+

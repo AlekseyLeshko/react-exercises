@@ -1,7 +1,7 @@
 import React from 'react';
 import test from 'ava';
 import { wrapper } from 'chuhai';
-import App from './src/app.js';
+import AppDefault from './src/app-default.js';
 import renderer from 'react-test-renderer';
 
 const suite = wrapper(test);
@@ -23,7 +23,7 @@ suite('entity model before and after redux store', t => {
 
   t.bench('default use without model', () => {
     component = renderer.create(
-      <App/>
+      <AppDefault/>
     );
   });
 });
