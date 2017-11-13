@@ -1,22 +1,24 @@
 import React from 'react';
+import moment from 'moment';
 
 export default class Item extends React.Component {
   click = () => {
     const entity = {
       ...this.props.entity,
       time: Date.now(),
-      name: 'test-name',
     };
 
     this.props.updateEntity(entity);
   }
 
   render() {
+    const date = moment(this.props.entity.time).format('DD/MM/YYYY');
+
     return (
       <div
         onClick={this.click}
       >
-        {JSON.stringify(this.props.entity)}
+        {date}
       </div>
     );
   }

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import Item from './components/item.js';
+import Item from './components/item-with-model.js';
 import store from './store';
-import container from './containers/entity-default.js';
+import container from './containers/entity-with-model.js';
 
 const ItemWithContainer = container(Item);
 

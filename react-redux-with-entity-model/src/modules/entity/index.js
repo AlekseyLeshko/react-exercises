@@ -1,6 +1,8 @@
-const todos = (state = {}, action) => {
+import * as constants  from './constants.js';
+
+const entity = (state = {}, action) => {
   switch (action.type) {
-    case 'UPDATE_ENTITY':
+    case constants.UPDATE_ENTITY:
       return {
         ...state,
         ...action.entity,
@@ -10,5 +12,5 @@ const todos = (state = {}, action) => {
   }
 };
 
-export default todos;
+export default entity;
 
