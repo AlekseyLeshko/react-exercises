@@ -4,8 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava"
   },
   "author": "Aleksey Leshko <alekseyleshko@gmail.com> (https://github.com/AlekseyLeshko)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "ava": "^0.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "chuhai": "^1.2.0",
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0",
+    "react-test-renderer": "^16.1.0"
+  },
+  "ava": {
+    "babel": "inherit",
+    "require": [
+      "babel-register"
+    ]
+  }
 }
