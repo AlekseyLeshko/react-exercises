@@ -8,7 +8,7 @@ import moment from 'moment';
 
 const suite = wrapper(test);
 
-suite('render component', t => {
+suite('render one component', t => {
   const expected = moment(Date.now()).format('DD/MM/YYYY');
   let component;
 
