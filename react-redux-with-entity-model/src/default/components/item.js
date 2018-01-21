@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import {timeFormat} from '../../constants';
 
 export default class Item extends React.Component {
   click = () => {
@@ -12,7 +13,7 @@ export default class Item extends React.Component {
   }
 
   render() {
-    const date = moment(this.props.entity.time).format('DD/MM/YYYY');
+    const date = moment(this.props.entity.time).format(timeFormat);
 
     return (
       <div

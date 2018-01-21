@@ -1,13 +1,11 @@
 import { connect } from 'react-redux';
-import * as actions from '../modules/entity/with-model/actions.js';
-import model from '../modules/entity/with-model/model.js';
+import * as actions from '../modules/entity/actions.js';
 
 const mapStateToProps = (state, ownProps) => {
   const entity = state.entity;
-  const model = new Model(entity);
 
   return {
-    entity: model,
+    entity,
   };
 };
 
