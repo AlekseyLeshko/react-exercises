@@ -2,7 +2,7 @@ model for entities in redux store
 =
 
 ## Idea
-Create model for all rudux store entities.
+Create model for rudux store entities.
 
 ## API
 - convertForStore
@@ -13,5 +13,10 @@ Profits of use model: encapsulation all in model(convert time and date, static e
 
 ### Benchmarks
 ```
-npm run test benchmark-one-item.js
+npm run test:benchmarks
+```
+
+### Demo
+```
+npm run start
 ```
