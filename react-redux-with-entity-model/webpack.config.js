@@ -1,17 +1,16 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: './src/index.html',
-  filename: 'index.html',
-  inject: 'body',
-});
-
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    default: './src/default/index.js',
+    withModel: './src/with-model/index.js',
+  },
   output: {
-    path: path.resolve('dist'),
-    filename: 'bundle.js'
+    path: path.join(__dirname, "dist"),
+    filename: "[name].bundle.js",
+    chunkFilename: "[id].chunk.js",
   },
   module: {
     loaders: [
@@ -19,6 +18,28 @@ module.exports = {
       { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: 'index.html',
+      chunks: [],
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/default/index.html',
+      filename: 'default.html',
+      inject: 'body',
+      chunks: ['default'],
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/with-model/index.html',
+      filename: 'with-model.html',
+      inject: 'body',
+      chunks: ['withModel'],
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      }
+    }),
+  ],
 };
-
