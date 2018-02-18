@@ -2,6 +2,8 @@ require('normalize.css/normalize.css');
 require('styles/App.css');
 
 import React from 'react';
+import Header from './header';
+import usersContainer from '../containers/users';
 
 let yeomanImage = require('../images/yeoman.png');
 
@@ -9,8 +11,11 @@ class MainComponent extends React.Component {
   render() {
     return (
       <div className="index">
+        <Header />
         <img src={yeomanImage} alt="Yeoman Generator" />
-        <div className="notice">Please edit <code>src/components/Main.js</code> to get started!</div>
+        <div className="notice">
+          {JSON.stringify(this.props.users)}
+        </div>
       </div>
     );
   }
@@ -19,4 +24,4 @@ class MainComponent extends React.Component {
 MainComponent.defaultProps = {
 };
 
-export default MainComponent;
+export default usersContainer(MainComponent);
