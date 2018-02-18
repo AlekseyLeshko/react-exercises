@@ -1,16 +1,16 @@
 import * as constants from './constants';
 
-export const createUsers = (users) => ({
-  type: constants.USERS_CREATE,
-  users,
+export const createUser = (user) => ({
+  type: constants.USER_CREATE,
+  user,
 });
 
-export const updateUsers = (users) => ({
-  type: constants.USERS_UPDATE,
-  users,
+export const updateUser = (user) => ({
+  type: constants.USER_UPDATE,
+  user,
 });
 
-export const deleteUsers = (users) => ({
-  type: constants.USERS_DELETE,
-  users,
+export const deleteUser = (user) => ({
+  type: constants.USER_DELETE,
+  user,
 });

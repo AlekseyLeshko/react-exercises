@@ -67,6 +67,7 @@
     "react-dom": "^15.0.0",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
-    "redux-actions": "^2.2.1"
+    "redux-actions": "^2.2.1",
+    "uuid": "^3.2.1"
   }
 }

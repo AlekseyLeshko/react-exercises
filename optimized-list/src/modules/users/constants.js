@@ -1,5 +1,5 @@
-export const USERS_CREATE = 'USERS_CREATE';
+export const USER_CREATE = 'USER_CREATE';
 
-export const USERS_UPDATE = 'USERS_UPDATE';
+export const USER_UPDATE = 'USER_UPDATE';
 
-export const USERS_DELETE = 'USERS_DELETE';
+export const USER_DELETE = 'USER_DELETE';

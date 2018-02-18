@@ -1,25 +1,32 @@
 import { handleActions } from 'redux-actions';
+import uuid from 'uuid';
 
 import * as constants from '../constants';
 
 const initState = {};
 
 export default handleActions({
-  [constants.USERS_CREATE]: (state, action) => ({
+  [constants.USER_CREATE]: (state, action) => {
+    const id = uuid.v4();
+
+    return {
+      ...state,
+      [id]: {
+        ...action.user,
+        id,
+      },
+    };
+  },
+
+  [constants.USER_UPDATE]: (state, action) => ({
     ...state,
-    [action.users.id]: {
-      ...action.users,
+    [action.user.id]: {
+      ...action.user,
     },
   }),
-  [constants.USERS_UPDATE]: (state, action) => ({
-    ...state,
-    [action.users.id]: {
-      ...action.users,
-    },
-  }),
-  [constants.USERS_DELETE]: (state, action) => {
+  [constants.USER_DELETE]: (state, action) => {
     const newState = { ...state };
-    delete newState[action.users.id];
+    delete newState[action.user.id];
     return newState;
   },
 }, initState);
