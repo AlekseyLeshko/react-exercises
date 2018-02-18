@@ -1,3 +1,9 @@
 {
-  "generator-react-webpack": {}
+  "generator-react-webpack": {},
+  "generator-my-ducks": {
+    "promptValues": {
+      "srcPath": "src"
+    },
+    "srcPath": "src"
+  }
 }
