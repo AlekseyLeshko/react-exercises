@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import usersContainer from '../../containers/users';
+import RandomButton from './components/random-toggle';
 require('./style.css');
 
 const makeid = () => {
@@ -19,7 +20,6 @@ class HeaderComponent extends Component {
       value: false,
     };
 
-    console.log(user);
     this.props.createUser(user);
   }
 
@@ -27,6 +27,7 @@ class HeaderComponent extends Component {
     return (
       <div className="header">
         <button onClick={this.addUser}>Add user</button>
+        <RandomButton />
       </div>
     );
   }
