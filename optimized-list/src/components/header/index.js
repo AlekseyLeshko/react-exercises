@@ -16,6 +16,7 @@ class HeaderComponent extends Component {
   addUser = () => {
     const user = {
       name: makeid(),
+      value: false,
     };
 
     console.log(user);
