@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import usersContainer from '../../../../containers/users';
-
-const getRandomInt = (max) => {
-  return Math.floor(Math.random() * Math.floor(max));
-}
+import {getRandomInt} from '../../../../helper';
 
 class RandomToggleComponent extends Component {
   toggle = () => {
