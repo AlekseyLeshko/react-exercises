@@ -1,19 +1,21 @@
 require('./style.css');
 
-import React from 'react';
+import React, { PureComponent} from 'react';
 import usersContainer from '../../containers/users';
-import Item from './components/item';
+import Item from '../item';
 
-class ListComponent extends React.Component {
-  renderItem = (user, index) => (<Item user={user} key={index} />)
+class ListComponent extends PureComponent {
+  renderItem = (user, index) => (<Item user={user} key={index} updateUser={this.props.updateUser} />)
 
   render() {
     const { users } = this.props;
     const items = users.map(this.renderItem);
 
     return (
-      <div className="list">
-        {items}
+      <div class="container">
+        <div className="list">
+          {items}
+        </div>
       </div>
     );
   }
