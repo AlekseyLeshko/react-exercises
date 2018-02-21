@@ -1,10 +1,10 @@
 require('./style.css');
 
-import React, { PureComponent} from 'react';
+import React, { Component} from 'react';
 import usersContainer from '../../containers/users';
 import Item from '../item';
 
-class ListComponent extends PureComponent {
+class ListComponent extends Component {
   renderItem = (user, index) => (<Item user={user} key={index} updateUser={this.props.updateUser} />)
 
   render() {
