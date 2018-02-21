@@ -1,21 +1,20 @@
 require('./style.css');
 
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 
-class ItemComponent extends PureComponent {
+class Item extends Component {
   shouldComponentUpdate(nextProps, nextState) {
     return this.props.user !== nextProps.user;
   }
 
   toggle = () => {
-    const user = { ...this.props.user };
-    user.value = !user.value;
+    const user = this.props.user.set('value', !this.props.user.get('value'));
 
     this.props.updateUser(user);
   }
 
   render() {
-    const {user} = this.props;
+    const user = this.props.user.toJS();
 
     return (
       <div className="item">
@@ -28,7 +27,7 @@ class ItemComponent extends PureComponent {
   }
 };
 
-ItemComponent.defaultProps = {
+Item.defaultProps = {
 };
 
-export default ItemComponent;
+export default Item;
