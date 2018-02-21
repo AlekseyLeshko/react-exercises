@@ -1,11 +1,11 @@
 require('normalize.css/normalize.css');
 require('styles/app.css');
 
-import React from 'react';
+import React, {Component} from 'react';
 import Header from '../header';
 import List from '../list';
 
-class MainComponent extends React.Component {
+class Main extends Component {
   render() {
     return (
       <div className="index">
@@ -16,7 +16,7 @@ class MainComponent extends React.Component {
   }
 }
 
-MainComponent.defaultProps = {
+Main.defaultProps = {
 };
 
-export default MainComponent;
+export default Main;
