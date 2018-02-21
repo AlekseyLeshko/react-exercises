@@ -1,9 +1,13 @@
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import usersContainer from '../../containers/users';
 import {getName} from '../../helper';
 require('./style.css');
 
-class Header extends PureComponent {
+class Header extends Component {
+  shouldComponentUpdate() {
+    return false;
+  }
+
   addUser = () => {
     const user = {
       name: getName(),

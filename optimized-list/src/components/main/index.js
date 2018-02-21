@@ -6,7 +6,13 @@ import Header from '../header';
 import List from '../list';
 
 class Main extends Component {
+  shouldComponentUpdate() {
+    console.log('s main');
+    return false;
+  }
+
   render() {
+    console.log('render main');
     return (
       <div className="index">
         <Header />
