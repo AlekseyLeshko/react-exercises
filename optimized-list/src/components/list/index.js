@@ -12,7 +12,7 @@ class ListComponent extends PureComponent {
     const items = users.map(this.renderItem);
 
     return (
-      <div class="container">
+      <div className="container">
         <div className="list">
           {items}
         </div>
