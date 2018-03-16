@@ -20,7 +20,7 @@ export default handleActions({
     const user = state.get(action.user.get('id')).merge(action.user);
     return state.set(user.get('id'), user);
   },
-  [constants.USER_DELETE]: (state, action) => {
+  [constants.USER_DELETE]: (state) => {
     // const newState = { ...state };
     // delete newState[action.user.id];
     return state;

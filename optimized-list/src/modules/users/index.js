@@ -1,6 +1,6 @@
 import byId from './byId';
 import {
-  combineReducers
+  combineReducers,
 } from 'redux-immutable';
 
 export default combineReducers({

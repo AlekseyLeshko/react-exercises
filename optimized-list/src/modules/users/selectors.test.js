@@ -3,9 +3,9 @@ import * as selectors from './selectors.js';
 
 describe('modules:users:selectors', () => {
   it('should return all users', () => {
-    const userss = selectors.getAllUsers(store.getState());
+    const users = selectors.getAllUsers(store.getState());
 
-    expect(userss).toHaveLength(1);
+    expect(users).toHaveLength(1);
   });
 
   it('should return users by id', () => {

@@ -3,7 +3,7 @@ require('./style.css');
 import React, {Component} from 'react';
 
 class Item extends Component {
-  shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate(nextProps) {
     return this.props.user !== nextProps.user;
   }
 
@@ -25,7 +25,7 @@ class Item extends Component {
       </div>
     );
   }
-};
+}
 
 Item.defaultProps = {
 };

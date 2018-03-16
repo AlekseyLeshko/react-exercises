@@ -1,7 +1,8 @@
 {
   "parser": "babel-eslint",
   "plugins": [
-    "react"
+    "react",
+    "jest"
   ],
   "parserOptions": {
     "ecmaVersion": 6,
@@ -15,10 +16,11 @@
     "amd": true,
     "es6": true,
     "node": true,
-    "mocha": true
+    "mocha": true,
+    "jest/globals": true
   },
   "rules": {
-    "comma-dangle": 1,
+    "comma-dangle": [2, "always-multiline"],
     "quotes": [ 1, "single" ],
     "no-undef": 1,
     "global-strict": 0,
